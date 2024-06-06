@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+
+
+<head>
+    <title>Tetris</title>
+    <link rel="stylesheet" href="bootsandcats.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"
+        integrity="sha512-N4kV7GkNv7QR7RX9YF/olywyIgIwNvfEe2nZtfyj73HdjCUkAfOBDbcuJ/cTaN04JKRnw1YG1wnUyNKMsNgg3g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="sketch.js"></script>
+    <script src="currentblock.js"></script>
+    <script src="key.js"></script>
+    <link rel="icon" href="Images/rBtn 2.png"> 
+
+</head>
+
+<body>
+    <div id="wrapperDiv">
+        <h1><u>Tetris</u></h1>
+
+        <div id="buttonPanel">
+            <div class="container">
+                <img src="Images/rBtn 2.png" id="Play" class="button">
+                <div class="center">Play</div>
+            </div>
+            <div class="container">
+                <img src="Images/rBtn 2.png" id="Inst" class="button">
+                <div class="center">Instructions</div>
+            </div>
+            <div class="container">
+                <img src="Images/rBtn 2.png" id="Web" class="button">
+                <div class="center">Back</div>
+            </div>
+        </div>
+
+        <div id = "score"></div>
+
+    </div>
+
+    <div id="panel" class="center"></div>
+    <footer>
+        <p>&copy; Alex Morales</p>
+    </footer>
+
+</body>
+
+<script>
+    let playBtn = document.getElementById("Play");
+    playBtn.addEventListener("click", () => {
+        if (gameState == 1) {
+            gameState = 2
+            playBtn.src = "Images/gBtn1.png"
+        }else{
+            gameState = 1
+        }
+    })
+
+    let instBtn = document.getElementById("Inst");
+    instBtn.addEventListener("click", () => {
+
+        if (showinst == false && gameState == 1) {
+            showinst = true;
+            instBtn.src = "Images/gBtn1.png"
+        }else{
+            instBtn.src="Images/rBtn 2.png"
+            showinst = false;
+        }
+    })
+
+    let webBtn = document.getElementById("Web");
+    webBtn.addEventListener("click", () => {
+
+        window.open("https://www.skibidisunshine.com/");
+        webBtn.src="Images/rBtn 2.png"
+    })
+
+</script>
+
+</html>
